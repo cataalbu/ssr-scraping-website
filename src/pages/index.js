@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
 import ProductList from '@/components/ProductList/ProductList';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -15,7 +16,7 @@ export default function Home() {
       </Head>
       <main className={`${styles.main}`}>
         <h1>Server Side Rendered Scraping Website</h1>
-        <a href="/products">Go to products</a>
+        <Link href="/products">Go to products</Link>
       </main>
     </>
   );

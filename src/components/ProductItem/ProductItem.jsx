@@ -3,6 +3,7 @@ import { AspectRatio, Box, Card, Skeleton, Typography } from '@mui/joy';
 
 import styles from './ProductItem.module.css';
 import { Rating } from '@mui/material';
+import Link from 'next/link';
 
 export default function ProductItem({ product }) {
   return (
@@ -12,13 +13,13 @@ export default function ProductItem({ product }) {
       data-id={product._id}
     >
       <AspectRatio ratio="1/1">
-        <a href={product && `http://localhost:3000/${product.id}`}>
+        <Link href={product && `http://localhost:3000/${product.id}`}>
           <img
             src={product.imageUrl}
             alt="product-image"
             className={styles['product-item-image']}
           />
-        </a>
+        </Link>
       </AspectRatio>
       <Typography className={styles['product-item-title']}>
         {product.name}

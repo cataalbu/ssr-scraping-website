@@ -29,7 +29,7 @@ export async function getServerSideProps(context) {
   const secretKey = process.env.SECRET_KEY;
   const token = jwt.sign({ user: 'ssr-app' }, secretKey, { expiresIn: '1m' });
   const res = await fetch(
-    'http://localhost:8080/api/products?limit=20&page=' + page,
+    `${process.env.MOCK_API_URL}/api/products?limit=20&page=` + page,
     {
       headers: {
         Authorization: `Bearer ${token}`,
